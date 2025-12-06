@@ -1,8 +1,12 @@
-export const config = { runtime: 'edge' };
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-export default async function handler() {
-  return new Response(
-    JSON.stringify({ ok: true, service: 'backend', ts: Date.now() }),
-    { headers: { 'content-type': 'application/json' }, status: 200 }
-  );
+export default async function handler(
+  _req: VercelRequest,
+  res: VercelResponse
+) {
+  res.status(200).json({
+    ok: true,
+    service: "smartsaver-backend",
+    timestamp: new Date().toISOString()
+  });
 }

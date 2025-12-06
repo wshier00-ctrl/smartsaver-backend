@@ -1,10 +1,10 @@
-import 'dotenv/config';
+import type { Config } from "drizzle-orm";
 
 export default {
-  schema: './schema/*',
-  out: './drizzle',
-  dialect: 'postgresql',
+  schema: "./schema",
+  out: "./drizzle",
+  driver: "pg",
   dbCredentials: {
-    url: process.env.DATABASE_URL!
+    connectionString: process.env.DATABASE_URL || ""
   }
-};
+} satisfies Config;

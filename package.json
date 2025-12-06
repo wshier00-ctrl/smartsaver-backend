@@ -1,24 +1,23 @@
 {
   "name": "smartsaver-backend",
   "version": "1.0.0",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "tsx watch api/health.ts",
-    "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio",
-    "build": "tsc -p tsconfig.json"
+    "dev": "vercel dev",
+    "build": "tsc",
+    "test": "node ./tests/run-tests.js"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "drizzle-orm": "^0.39.0",
-    "pg": "^8.11.5",
-    "zod": "^3.22.4"
+    "@supabase/supabase-js": "^2.48.0",
+    "@vercel/node": "^3.0.0",
+    "drizzle-orm": "^0.34.0",
+    "openai": "^4.67.0",
+    "pg": "^8.11.3",
+    "stripe": "^16.0.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "^20.11.30",
-    "@types/pg": "^8.15.5",
-    "drizzle-kit": "^0.20.0",
-    "tsx": "^4.7.0",
-    "typescript": "^5.4.0"
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
   }
 }
